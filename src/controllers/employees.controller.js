@@ -63,8 +63,8 @@ export const createEmployee = async (req, res) => {
 };
 
 export const deleteEmployee = async (req, res) => {
-  const { id } = req.params;
   try {
+    const { id } = req.params;
     const [rows] = await pool.query("DELETE FROM employee WHERE id = ?", [
       id,
     ]);
