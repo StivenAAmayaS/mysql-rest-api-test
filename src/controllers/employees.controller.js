@@ -65,11 +65,11 @@ export const createEmployee = async (req, res) => {
 export const deleteEmployee = async (req, res) => {
   const { id } = req.params;
   try {
-    const [result] = await pool.query("DELETE FROM employee WHERE id = ?", [
+    const [rows] = await pool.query("DELETE FROM employee WHERE id = ?", [
       id,
     ]);
 
-    if (result.affectedRows <= 0)
+    if (rows.affectedRows <= 0)
       return res.status(404).json({
         message: "Employee not found",
       });
