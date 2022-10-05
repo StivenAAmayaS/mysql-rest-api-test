@@ -37,7 +37,11 @@
 
     -> terminal:
         -> git init
+        -> git add .
         -> git commit -m "first commit"
+
+    -> create repository
+        
 -----------------------------------------------------------
 
 -> video : https://www.youtube.com/watch?v=3dSkc-DIM74&t=4548s
