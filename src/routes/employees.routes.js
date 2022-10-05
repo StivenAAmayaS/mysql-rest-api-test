@@ -16,7 +16,7 @@ router.get("/employees", getEmployees);
 router.get("/employees/:id", getEmployee);
 
 // DELETE an employee
-router.delete("/employees:id", deleteEmployee);
+router.delete("/employees/:id", deleteEmployee);
 
 // INSERT an employee
 router.post("/employees", createEmployee);
