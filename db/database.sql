@@ -11,7 +11,7 @@ CREATE TABLE employee (
 
 DESCRIBE employee;
 
-INSERT INTO employee VALUES
+INSERT INTO employee values
     (1, 'Joe', 1000),
     (2, 'Maria', 2000),
     (3, 'Camila', 2500),

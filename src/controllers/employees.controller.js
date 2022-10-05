@@ -12,11 +12,13 @@ export const getEmployees = async (req, res) => {
 };
 
 export const getEmployee = async (req, res) => {
+  const { id } = req.params;
+
   try {
     // console.log(req.params.id);
 
     const [rows] = await pool.query("SELECT * FROM employee WHERE id = ?", [
-      req.params.id,
+      id,
     ]);
 
     if (rows.length <= 0)
@@ -43,11 +45,13 @@ export const createEmployee = async (req, res) => {
       [name, salary]
     );
 
-    res.send({
-      id: rows.insertId,
-      name,
-      salary,
-    });
+    res.status(201).json({ id: rows.insertId, name, salary });
+    
+    // res.send({
+    //   id: rows.insertId,
+    //   name,
+    //   salary,
+    // });
 
     // res.send({ rows });
     // console.log(req.body);
@@ -59,9 +63,10 @@ export const createEmployee = async (req, res) => {
 };
 
 export const deleteEmployee = async (req, res) => {
+  const { id } = req.params;
   try {
     const [result] = await pool.query("DELETE FROM employee WHERE id = ?", [
-      req.params.id,
+      id,
     ]);
 
     if (result.affectedRows <= 0)
