@@ -41,7 +41,9 @@
         -> git commit -m "first commit"
 
     -> create repository
-        
+        -> git remote add origin https://github.com/StivenAAmayaS/mysql-rest-api-test.git
+        -> git push origin master
+
 -----------------------------------------------------------
 
 -> video : https://www.youtube.com/watch?v=3dSkc-DIM74&t=4548s
